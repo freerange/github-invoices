@@ -8,7 +8,12 @@ A simple [Ruby][] script that uses [Mechanize][] to sign in to our [GitHub][] ac
 * The user we sign in as has to be a member of the Owners team of the Organisation so that they have admin access.
 * You can't enable two factor authentication for this user as that would break the automated aspect of the script.
 
+### License
+
+GitHub Invoices is released under the [MIT License][].
+
 [Dropbox]: https://www.dropbox.com/
 [GitHub]: https://github.com/
 [Mechanize]: https://github.com/sparklemotion/mechanize
+[MIT License]: http://opensource.org/licenses/MIT
 [Ruby]: https://www.ruby-lang.org/en/
