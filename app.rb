@@ -12,7 +12,8 @@ sign_in_page.form_with(action: '/session') do |sign_in_form|
   sign_in_form['password'] = ENV.fetch('GITHUB_PASSWORD')
 end.submit
 
-payment_history_page = agent.get("https://github.com/organizations/freerange/settings/payments")
+organisation = ENV.fetch('GITHUB_ORGANISATION')
+payment_history_page = agent.get("https://github.com/organizations/#{organisation}/settings/payments")
 latest_receipt_link_html = payment_history_page.at('#payment-history tr.success:first .receipt a')
 latest_receipt_link = Mechanize::Page::Link.new(latest_receipt_link_html, agent, payment_history_page)
 latest_receipt_file = latest_receipt_link.click
